@@ -39,6 +39,20 @@ can start the server, but can't see the dir in brower
 
 中文文档：https://github.com/zjgnlzq/light-static-server/docs
 
+## Edit config.json
+example
+```javascript
+{
+	"path": {
+		"/test/": "/usr/local/www",    // "/test/" is the url you request in browser, "/usr/local/www" is the dir path on you computer
+		"/test-a/": "/usr/local/a/b/c/"
+	},
+  	"onlyStatic": false, // only serve for file, can't see the dir in browser
+  	"port": 7000 // the port of server listen on
+}
+```
+
+
 
 ## Report a issue
 
