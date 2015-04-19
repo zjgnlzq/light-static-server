@@ -1,4 +1,5 @@
 
+a light , flexible and power static server 
 
 ---------------------------
 
@@ -6,7 +7,7 @@
 ## Install
 
 ```bash
-$ npm install lss -g
+$ npm install -g light-static-server
 ```
 
 ## Usage
