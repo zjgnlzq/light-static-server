@@ -1,0 +1,38 @@
+{
+  "name": "lss",
+  "version": "1.0.0",
+  "description": "light static server",
+  "author": {
+    "name": "jzu",
+    "email": "andythink@126.com"
+  },
+    "maintainers": [
+    {
+      "name": "jzu",
+      "email": "andythink@126.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zjgnlzq/light-static-server.git"
+  },
+  "keywords": [
+    "static",
+    "seve-index",
+    "server",
+    "package",
+    "tool",
+    "browser"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "colorful": "^2.1.0",
+    "commander": "^2.8.0",
+    "finalhandler": "^0.3.4",
+    "serve-index-prefix": "^1.0.0",
+    "serve-static": "^1.9.2"
+  },
+  "bin": {
+    "lss": "bin/lss"
+  }
+}

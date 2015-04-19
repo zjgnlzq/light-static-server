@@ -1,0 +1,40 @@
+
+var config = require('./config.json')
+var package = require('../package.json')
+var path = require('path')
+require('colorful').colorful()
+
+var program = require('commander')
+
+program.on('--help', function() {
+	console.log('To config your server, you can edit below file:'.to.bold.magenta.color)
+	console.log(__dirname + path.sep + 'config.json')
+})
+
+program
+	.option('-V, --version', 'output the version number', handleOptionVersion)
+	.option('-P, --port <lang>', 'config the port of your server listen at')
+	.option('-o, --onlystatic', 'start server only static, not show the dir')
+	.parse(process.argv)
+
+
+function handleOptionVersion() {
+	console.log(package.version)
+	process.exit()
+}
+
+
+if(program.port) {
+	config.port = program.port
+}
+
+if(program.onlystatic) {
+	config.onlyStatic = program.onlystatic
+}
+
+require('./run.js')
+
+
+
+
+
