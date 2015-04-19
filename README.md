@@ -1,6 +1,4 @@
-# lss
 
-light static server
 
 ---------------------------
 

@@ -1,6 +1,6 @@
 {
-  "name": "lss",
-  "version": "1.0.0",
+  "name": "light-static-server",
+  "version": "1.0.3",
   "description": "light static server",
   "author": {
     "name": "jzu",

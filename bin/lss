@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 var config = require('./config.json')
 var package = require('../package.json')
