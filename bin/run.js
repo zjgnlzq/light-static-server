@@ -11,7 +11,6 @@ var pathMap = config['path']
 var onlyStatic = config.onlyStatic
 
 
-//规范化（/prefixPath/） prefix 路径
 if(typeof pathMap === 'undefined') {
     pathMap = {}
 } else {
@@ -30,7 +29,6 @@ var indexMap = {},
     serveMap = {},
     prefixRegExpMap = {}
 
-//初始化 indexMap、serveMap prefixRegExpMap
 for(var tempPath in pathMap) {
     indexMap[tempPath] = serveIndex(pathMap[tempPath], {"icons": true, "hidden": false, "view": "details"})
      
@@ -41,7 +39,6 @@ for(var tempPath in pathMap) {
 }
 
 
-// 检测有没有配置 "/"， 如果没有配置当前目录为根目录
 var homeDir = ''
 if(pathMap['/'] === undefined) {
     var tempRoot = process.cwd()
@@ -61,7 +58,6 @@ if(pathMap['/'] === undefined) {
 
 // Create server 
 var server = http.createServer(function onRequest(req, res){
-    // 将req.url规范化 目录的路径最后都有"/"
     req.url = _normPath(req.url)
 
     var flag = true
@@ -94,9 +90,7 @@ function _normPath(path) {
 function serveIndexRespone(req, res, prefixPath) {
     var done = finalhandler(req, res)
 
-    //修改req.url 在serve-static serve-index用作调整相对于根
     req.url =  '/' + req.url.replace(prefixRegExpMap[prefixPath], '')
-    // 用与serve-index文件的超链接路径调整
     if(prefixPath === '/') {
         req.prefixPath = ''
     } else {
@@ -122,10 +116,7 @@ server.listen(port, function() {
     console.log('--------------------------------------------')
     console.log('-                                          -')
     console.log('-                                          -')
-    console.log('-                                          -')
-    console.log('-         轻量级静态文件服务器启动完成     -')
-    console.log('-                                          -')
-    console.log('-   在浏览器中打开  http://127.0.0.1:'+ port +'  -')
+    console.log('-     light static server start at '+ port +'    -')
     console.log('-                                          -')
     console.log('-                                          -')
     console.log('--------------------------------------------')
