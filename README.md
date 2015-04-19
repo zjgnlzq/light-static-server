@@ -11,18 +11,33 @@ $ npm install lss -g
 
 ## Usage
 
-lss           can start server, use the config.json for default option
+```bash
+lss
+```
+can start server, use the config.json for default option
 
-lss -h        can see the help info
+```bash
+lss -h
+```
+can see the help info
 
-lss --version can see the version of lss
+```bash
+lss --version 
+```
+can see the version of lss
 
-lss --port 80 can start the server at port of 80
+```bash
+lss --port 80 
+```
+can start the server at port of 80
 
-lss -0        can start the server, but can't see the dir in brower
+```bash
+lss -o
+```
+can start the server, but can't see the dir in brower
 
 
-- 中文文档：https://github.com/spmjs/docs
+中文文档：https://github.com/zjgnlzq/light-static-server/docs
 
 
 ## Report a issue
